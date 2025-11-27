@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C4EBF2">
+
+    <!-- Header: App Name -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SoapySignal"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:gravity="left"
+        android:padding="16dp"
+        android:background="#3B82F6"
+        android:textStyle="bold"/>
+
+    <!-- Greeting Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/userlogo"
+            android:contentDescription="User Icon"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Santos Household"
+                android:textColor="#1E88E5"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello John!"
+                android:textColor="#424242"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Live Status Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live Status:"
+            android:textSize="18sp"
+            android:textColor="#1E88E5"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Updated: 9/24/2025 10:30 AM"
+            android:textSize="11sp"
+            android:textColor="#94A3B8"/>
+    </LinearLayout>
+
+    <!-- Main Status Card with Light Pink/Red Background (Stopped State) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFCDD2"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- Status Indicator Dots -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="#BDBDBD"
+                android:layout_marginEnd="8dp"/>
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="#BDBDBD"
+                android:layout_marginEnd="8dp"/>
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="#E53935"
+                android:layout_marginEnd="8dp"/>
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="#BDBDBD"/>
+        </LinearLayout>
+
+        <!-- Washing Machine Visual (Static - No Animation) -->
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="24dp">
+
+            <!-- Outer circle (washing machine) -->
+            <View
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/circle_border"
+                android:layout_centerInParent="true"/>
+
+            <!-- Inner circle (drum) -->
+            <View
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:background="@drawable/circle_light_gray"
+                android:layout_centerInParent="true"/>
+
+            <!-- Static Container (No spinning) -->
+            <RelativeLayout
+                android:id="@+id/staticContainer"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerInParent="true">
+
+                <!-- Main dots (gray when stopped) -->
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#BDBDBD"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"/>
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#BDBDBD"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"/>
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#BDBDBD"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"/>
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#BDBDBD"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"/>
+
+                <!-- Additional smaller dots -->
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="#D6D6D6"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="30dp"/>
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="#D6D6D6"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginStart="110dp"/>
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="#E0E0E0"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="90dp"/>
+            </RelativeLayout>
+
+            <!-- Center dot -->
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="#9E9E9E"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <!-- Status Text -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stopped"
+            android:textSize="32sp"
+            android:textColor="#E53935"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/statusDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The washing cycle has stopped."
+            android:textSize="14sp"
+            android:textColor="#64748B"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <!-- Session Info Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spin Session of the Day: 1"
+            android:textSize="16sp"
+            android:textColor="#1E88E5"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Started: August 24, 2025 10:30 AM"
+            android:textSize="14sp"
+            android:textColor="#1E88E5"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ended: August 24, 2025 11:00 AM (30 mins)"
+            android:textSize="14sp"
+            android:textColor="#1E88E5"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Used by: John Santos"
+            android:textSize="14sp"
+            android:textColor="#1E88E5"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Start New Session Button -->
+        <Button
+            android:id="@+id/btnStartNewSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start New Session"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3B82F6"
+            android:layout_gravity="center"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="12dp"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#3B82F6"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/homeNav"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/homelogo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/historyNav"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/historylogo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingsNav"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/settingslogo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

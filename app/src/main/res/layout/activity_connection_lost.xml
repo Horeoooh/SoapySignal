@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4EBF2">
+
+    <!-- Header: App Name -->
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SoapySignal"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:gravity="left"
+        android:padding="16dp"
+        android:background="#3B82F6"
+        android:textStyle="bold"/>
+
+    <!-- Greeting Section Card -->
+    <LinearLayout
+        android:id="@+id/greetingCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@drawable/rounded_bg"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:elevation="2dp">
+
+        <!-- User Icon Circle -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/userlogo"
+            android:contentDescription="User Icon"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Santos Household"
+                android:textColor="#3B82F6"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello John!"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation - defined first so mainContent can reference it -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#3B82F6"
+        android:gravity="center"
+        android:paddingVertical="6dp">
+
+        <!-- Home -->
+        <LinearLayout
+            android:id="@+id/homeNav"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/homelogo"
+                android:contentDescription="Home"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <!-- History -->
+        <LinearLayout
+            android:id="@+id/historyNav"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/historylogo"
+                android:contentDescription="History"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <!-- Settings -->
+        <LinearLayout
+            android:id="@+id/settingsNav"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/settingslogo"
+                android:contentDescription="Settings"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content Area -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/greetingCard"
+        android:layout_above="@id/bottomNav"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="32dp">
+
+        <!-- Washing Machine with WiFi Error Icon -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <!-- Washing Machine Image (semi-transparent) -->
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="160dp"
+                android:src="@drawable/idlemachine"
+                android:alpha="0.85"
+                android:contentDescription="Washing Machine"/>
+
+            <!-- Red WiFi Error Icon - positioned at bottom right -->
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="-5dp"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/ic_wifi_error"
+                android:contentDescription="Connection Error"/>
+        </FrameLayout>
+
+        <!-- Connection Lost Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connection Lost"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Description Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We can't reach your washing\nmachine right now."
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:alpha="0.9"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Retry Connection Button (Text style - coral/salmon color) -->
+        <TextView
+            android:id="@+id/btnRetryConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retry Connection"
+            android:textColor="#F87171"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Change Wi-Fi Settings Button (Text style - dark) -->
+        <TextView
+            android:id="@+id/btnChangeWifiSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Wi-Fi Settings"
+            android:textColor="#1F2937"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+</RelativeLayout>
