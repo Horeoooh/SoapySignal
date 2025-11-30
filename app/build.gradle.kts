@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -45,4 +46,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Firebase BOM (Bill of Materials) - manages versions
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+
+    // Firestore
+    implementation("com.google.firebase:firebase-firestore-ktx")
+
+    // Optional: Firebase Authentication
+    implementation("com.google.firebase:firebase-auth-ktx")
 }

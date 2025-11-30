@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1088819269106",
+    "project_id": "soapy-signal",
+    "storage_bucket": "soapy-signal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088819269106:android:e180a29c57e1a36d382f6b",
+        "android_client_info": {
+          "package_name": "com.example.soapysignal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLuUoWBjp0e4nzJb-EJIY6fKkTHzriYpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

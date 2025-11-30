@@ -46,16 +46,18 @@
                 android:layout_marginStart="8dp">
 
                 <TextView
+                    android:id="@+id/tvHouseholdName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Santos Household"
+                    android:text="Loading..."
                     android:textColor="#1E88E5"
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/tvGreeting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hello John!"
+                    android:text="Hello!"
                     android:textColor="#5B5D5F"/>
             </LinearLayout>
         </LinearLayout>
