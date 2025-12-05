@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#C4EBF2">
 
     <!-- Header: App Name -->
     <TextView
-        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SoapySignal"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textColor="#FFFFFF"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="16dp"
         android:background="#3B82F6"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <!-- Greeting Section Card -->
     <LinearLayout
-        android:id="@+id/greetingCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:background="@drawable/rounded_bg"
+        android:padding="16dp"
+        android:background="@drawable/rounded_card_white"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:gravity="center_vertical"
-        android:elevation="2dp">
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical">
 
-        <!-- User Icon Circle -->
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/userlogo"
-            android:contentDescription="User Icon"/>
+            android:contentDescription="User Icon" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,28 +46,118 @@
                 android:layout_height="wrap_content"
                 android:text="Santos Household"
                 android:textColor="#3B82F6"
-                android:textSize="14sp"/>
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hello John!"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textColor="#424242"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Bottom Navigation - defined first so mainContent can reference it -->
+    <!-- Spacer to push content to center -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Washing Machine with Error Icon -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/idlemachine"
+            android:alpha="0.5"
+            android:contentDescription="Washing Machine" />
+
+        <!-- Connection Lost Icon -->
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="Connection Lost"
+            android:src="@drawable/ic_connection_lost" />
+    </FrameLayout>
+
+    <!-- Connection Lost Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connection Lost"
+        android:textSize="28sp"
+        android:textColor="#EF4444"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp" />
+
+    <!-- Description Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We can't reach your washing\nmachine right now."
+        android:textSize="16sp"
+        android:textColor="#64748B"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" />
+
+    <!-- Retry Connection Button -->
+    <Button
+        android:id="@+id/btnRetryConnection"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Retry Connection"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_button_red"
+        app:backgroundTint="@null" />
+
+    <!-- Change Wi-Fi Settings Button -->
+    <Button
+        android:id="@+id/btnChangeWifi"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Change Wi-Fi Settings"
+        android:textColor="#424242"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_button_outline_gray"
+        app:backgroundTint="@null" />
+
+    <!-- Spacer before bottom nav -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="64dp"
         android:orientation="horizontal"
         android:background="#3B82F6"
-        android:gravity="center"
-        android:paddingVertical="6dp">
+        android:gravity="center">
 
         <!-- Home -->
         <LinearLayout
@@ -81,21 +166,22 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/homelogo"
-                android:contentDescription="Home"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/home"
+                android:contentDescription="Home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                android:layout_marginTop="2dp"/>
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <!-- History -->
@@ -105,21 +191,22 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/historylogo"
-                android:contentDescription="History"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/history"
+                android:contentDescription="History" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="History"
                 android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                android:layout_marginTop="2dp"/>
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <!-- Settings -->
@@ -129,108 +216,23 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/settingslogo"
-                android:contentDescription="Settings"/>
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/settings"
+                android:contentDescription="Settings" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Settings"
                 android:textColor="#FFFFFF"
-                android:textSize="11sp"
-                android:layout_marginTop="2dp"/>
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Main Content Area -->
-    <LinearLayout
-        android:id="@+id/mainContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/greetingCard"
-        android:layout_above="@id/bottomNav"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingHorizontal="32dp">
-
-        <!-- Washing Machine with WiFi Error Icon -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <!-- Washing Machine Image (semi-transparent) -->
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="160dp"
-                android:src="@drawable/idlemachine"
-                android:alpha="0.85"
-                android:contentDescription="Washing Machine"/>
-
-            <!-- Red WiFi Error Icon - positioned at bottom right -->
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="-5dp"
-                android:layout_marginBottom="25dp"
-                android:src="@drawable/ic_wifi_error"
-                android:contentDescription="Connection Error"/>
-        </FrameLayout>
-
-        <!-- Connection Lost Text -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Connection Lost"
-            android:textSize="22sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- Description Text -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="We can't reach your washing\nmachine right now."
-            android:textSize="14sp"
-            android:textColor="#FFFFFF"
-            android:alpha="0.9"
-            android:gravity="center"
-            android:lineSpacingExtra="2dp"
-            android:layout_marginBottom="28dp"/>
-
-        <!-- Retry Connection Button (Text style - coral/salmon color) -->
-        <TextView
-            android:id="@+id/btnRetryConnection"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Retry Connection"
-            android:textColor="#F87171"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:padding="12dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- Change Wi-Fi Settings Button (Text style - dark) -->
-        <TextView
-            android:id="@+id/btnChangeWifiSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change Wi-Fi Settings"
-            android:textColor="#1F2937"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:padding="12dp"
-            android:clickable="true"
-            android:focusable="true"/>
-
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

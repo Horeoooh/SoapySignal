@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Washer body -->
+    <path
+        android:pathData="M4,4C4,2.89543 4.89543,2 6,2H18C19.1046,2 20,2.89543 20,4V20C20,21.1046 19.1046,22 18,22H6C4.89543,22 4,21.1046 4,20V4Z"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- Door circle -->
+    <path
+        android:pathData="M12,17C14.2091,17 16,15.2091 16,13C16,10.7909 14.2091,9 12,9C9.7909,9 8,10.7909 8,13C8,15.2091 9.7909,17 12,17Z"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- Control panel line -->
+    <path
+        android:pathData="M4,6H20"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round" />
+    <!-- Button dots -->
+    <path
+        android:pathData="M8,4.5L8,4.5"
+        android:strokeWidth="1.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round" />
+</vector>

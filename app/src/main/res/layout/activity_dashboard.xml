@@ -24,8 +24,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="#FFFFFF"
-        android:layout_margin="16dp"
+        android:background="@drawable/rounded_card_white"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_vertical">
 
         <ImageView
@@ -294,7 +295,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/homelogo"/>
+                android:src="@drawable/home"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -315,7 +316,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/historylogo"/>
+                android:src="@drawable/history"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -336,7 +337,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/settingslogo"/>
+                android:src="@drawable/settings"/>
 
             <TextView
                 android:layout_width="wrap_content"

@@ -171,7 +171,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/homelogo"/>
+                android:src="@drawable/home"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -192,7 +192,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/historylogo"/>
+                android:src="@drawable/history"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/settingslogo"/>
+                android:src="@drawable/settings"/>
 
             <TextView
                 android:layout_width="wrap_content"

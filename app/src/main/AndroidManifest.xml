@@ -12,29 +12,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoapySignal">
 
-        <!-- Add this DashboardActivity -->
+        <!-- Landing Activity (new launcher) -->
+        <activity
+            android:name=".landing.LandingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Dashboard Activity -->
         <activity
             android:name=".dashboard.DashboardActivity"
+            android:exported="false" />
+
+        <!-- Profile Activity -->
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:exported="false" />
+
+        <!-- Edit Profile Activity -->
+        <activity
+            android:name=".profile.EditProfileActivity"
             android:exported="false" />
 
         <activity
             android:name=".history.HistoryActivity"
             android:exported="false" />
+
         <activity
             android:name=".home.HomeActivity"
             android:exported="false" />
+
         <activity
             android:name=".register.RegisterActivity"
             android:exported="false" />
+
         <activity
             android:name=".login.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
